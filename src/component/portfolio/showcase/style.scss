@@ -1,0 +1,51 @@
+@import "../../style-config/mixins.scss";
+@import "../../style-config/variable.scss";
+
+.projects-showcase {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+    justify-content: center;
+    @include small-screen{
+        height: 570px;
+        justify-content: center;
+        width: 98%;
+        margin-left: 5px;
+    }
+    .show-item {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin: 10px;
+        position: relative;
+        cursor: pointer;
+        @include transition;
+    
+        &.zoomIn {
+            transform: scale(0);
+            animation: zoomIn 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            }
+            &.zoomOut {
+            transform: scale (1);
+            animation: zoomOut 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            }
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+    transform: scale(0);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+    @keyframes ZoomOut {
+    0% {
+    transform: scale(1);
+    }
+    100% {
+    transform: scale(0);
+    }
+    }
