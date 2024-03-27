@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { gsap } from 'gsap';
 import "../index.css";
 import { TfiAlignRight } from "react-icons/tfi";
 import { IoMdClose } from "react-icons/io";
+import { Images } from "../constant/ImageConst";
 
-const Header = () => {
+const Header = ({handleScroll}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
@@ -33,58 +33,63 @@ const Header = () => {
     setTimeout(() => animateLinks(), 0);
   };
 
+  const humburgerClose = ()=>{
+    setTimeout(() => {
+      setIsMenuOpen(!isMenuOpen)
+      
+    }, 400);
+  }
+
   return (
     <>
       <div className="header-container">
       
       
           <div className="logo">
-            <img src="https://www.aaravcreation.com/wp-content/uploads/2022/08/Aarav-creation-Logo-white.png" alt="" />
+            <img src={Images.logo} alt="" />
           </div>
      
           <div className="display-container">
           <div id="link-container" className={isMenuOpen ? "#link-container active" : "#link-container"} >
             <li>
               {" "}
-              <Link to="/"> Home</Link>{" "}
+              <Link to="/" onClick={humburgerClose}> Home</Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/about"> About</Link>
+              <Link to="/about" onClick={humburgerClose}> About</Link>
             </li>
             <li>
               {" "}
-              <Link to="/wedding"> Wedding</Link>{" "}
+              <Link to="/wedding" onClick={humburgerClose}> Wedding</Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/event"> Event</Link>{" "}
+              <Link to="/event" onClick={humburgerClose}> Event & Corporate</Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/preWedding"> Pre-Wedding</Link>{" "}
+              <Link to="/preWedding" onClick={humburgerClose}> Pre-Wedding</Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/fashionAndPortraits">Fashion & Portraits</Link>{" "}
+              <Link to="/fashionAndPortraits" onClick={humburgerClose}>Fashion & Portraits</Link>{" "}
             </li>
            
             <li>
               {" "}
-              <Link to="/babyAndMaternity"> Baby and Maternity</Link>{" "}
+              <Link to="/babyAndMaternity" onClick={humburgerClose}> Baby and Maternity</Link>{" "}
             </li>
-            {/* <li>
+            <li>
               {" "}
-              <Link to="/contact"> contact</Link>{" "}
-            </li> */}
+              <Link to="/Ecommerce" onClick={humburgerClose}> E-Commerce</Link>{" "}
+            </li>
           </div>
           </div>
        
 
-        <div className="social-icons">
-          <FaFacebook className="facebook" />
-          <FaInstagram className="instagram" />
-          <FaYoutube className="youtube" />
+        <div className="social-icons" onClick={handleScroll}>
+          <span >Contact Us</span>
         </div>
         <div id="mobile" onClick={toggleMenu}>
           {isMenuOpen? <IoMdClose className="icon CloseIcon" /> :<TfiAlignRight className="icon OpenIcon" /> }

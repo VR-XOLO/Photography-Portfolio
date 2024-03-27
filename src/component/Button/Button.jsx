@@ -6,32 +6,32 @@ const Button = () => {
     const buttonData = [{
         id : 1,
         name: "Wedding",
-        path : "wedding"
+        path : "/wedding"
     },
     {
         id : 2,
-        name: "Event",
-        path : "event"
+        name: "Event & Corporate",
+        path : "/event"
     },
     {
         id : 3,
         name: "Pre-Wedding",
-        path : "preWedding"
+        path : "/preWedding"
     },
     {
         id : 4,
-        name: "Fashions",
-        path : "fashionAndPortraits"
+        name: "Fashions & Portraits",
+        path : "/fashionAndPortraits"
     },
     {
         id : 5,
-        name: "Portraits",
-        path : "fashionAndPortraits"
+        name: "E-Commerce",
+        path : "/Ecommerce"
     },
     {
         id : 6,
         name: "Baby & Maternity",
-        path : "babyAndMaternity"
+        path : "/babyAndMaternity"
     },
 ]
   return (

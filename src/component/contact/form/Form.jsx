@@ -70,7 +70,6 @@ const Form = () => {
                     </div>
                     <div className="input-field">
                         <input
-                        maxLength={10}
                             type="number"
                             name="phone_number"
                             placeholder="Phone"
@@ -129,7 +128,7 @@ const Form = () => {
                               <p className="errors">{errors.message?.message}</p>
                           )}
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="aaquib">Submit</button>
                 </form>
             </div>
         </>

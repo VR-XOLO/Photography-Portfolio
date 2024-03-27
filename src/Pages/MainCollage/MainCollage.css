@@ -1,0 +1,34 @@
+
+
+.collage-container {
+    padding: 100px 100px;
+    background-color: black;
+}
+.collage-container h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 50px;
+   
+}
+
+.page-collage{
+    column-count: 3;
+    column-gap: 15px;
+}
+
+@media screen and (max-width: 769px) {
+    .collage-container {
+        padding: 50px 20px;
+    }
+    .collage-container h2{
+        font-size: 25px;
+    }
+    .slideBackground{
+        height: 65vh !important;
+    }
+    .page-collage{
+        column-count: 1;
+        column-gap: 1px;
+    }
+}

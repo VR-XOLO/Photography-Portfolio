@@ -1,0 +1,10 @@
+/* collage.css */
+.hide-on-mobile {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .hide-on-mobile {
+      display: block; /* or inline, inline-block, etc., depending on your layout */
+    }
+  }

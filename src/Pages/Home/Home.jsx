@@ -1,34 +1,25 @@
-import React, { useRef, useState, useEffect, createRef } from "react";
+import React, { useRef, useState, useEffect, createRef, useCallback } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { PiHandFill } from "react-icons/pi";
-
-
-import {
-  FaFacebook,
-  FaInstagram,
-  FaRegArrowAltCircleRight,
-  FaTwitter,
-  FaWhatsapp,
-} from "react-icons/fa";
-
-
 // import required modules
 import gsap from "gsap";
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
 import Showcase from "../../component/portfolio/showcase/Showcase";
-import Button from "../../component/Button/Button";
-import Contact from "../../component/contact/Contact";
-// import Contact from "../../component/contact/Contact";
 
-import { Modal } from "antd";
+import { Images } from "../../constant/ImageConst";
+
+import AboutUs from "../../component/AboutUs";
+import Services from "../../component/Services";
 
 export default function Home() {
   const headerRefs = useRef([
+    createRef(),
+    createRef(),
+    createRef(),
     createRef(),
     createRef(),
     createRef(),
@@ -47,7 +38,7 @@ export default function Home() {
       id: 2,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.Slider2,
       alt: "Wedding",
     },
     {
@@ -148,46 +139,49 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [active, setActive] = useState("all");
   const [imagesData, setImagesData] = useState(images);
-  const [transition, setTransition] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
   const sliderData = [
     {
-      h1: "Prenav Creations",
+      h1: "Aarav Films",
       h2: "Photography",
       srNum: "01",
-      imgUrl:
-        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imgUrl: Images.Slider1,
     },
     {
-      h1: "Pre-Wedding",
+      h1: "Wedding",
       h2: "Photography",
       srNum: "02",
-      imgUrl:
-        "https://images.pexels.com/photos/1024975/pexels-photo-1024975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      imgUrl: Images.Slider2,
     },
     {
       h1: " Fashion & Portraits",
       h2: "Photography",
       srNum: "03",
-      imgUrl:
-        "https://images.pexels.com/photos/3635872/pexels-photo-3635872.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imgUrl: Images.Slider3,
     },
     {
-      h1: "Ring-Cermony",
+      h1: "Events & corporate",
       h2: "Photography",
       srNum: "04",
-      imgUrl:
-        "https://images.pexels.com/photos/2852135/pexels-photo-2852135.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imgUrl: Images.Slider4,
+    },
+    {
+      h1: "Pre - Wedding",
+      h2: "Photography",
+      srNum: "05",
+      imgUrl: Images.Slider5,
+    },
+    {
+      h1: "Baby & Maternity",
+      h2: "Photography",
+      srNum: "06",
+      imgUrl: Images.Slider6,
+    },
+    {
+      h1: "E - Commerce",
+      h2: "Photography",
+      srNum: "07",
+      imgUrl: Images.Slider7,
     },
   ];
 
@@ -216,31 +210,26 @@ export default function Home() {
       name: "Baby & Maternity",
       id: "Baby & Maternity",
     },
+    {
+      name: "E-Commerce",
+      id: "E-Commerce",
+    },
   ];
 
   const filterImages = (tag) => {
-    setTransition("zoomOut");
-    setTimeout(() => {
-      if (tag !== "all") {
-        const filteredImages = images.filter((value) =>
-          value.tags.includes(tag)
-        );
-        setImagesData(filteredImages);
-      } else {
-        setImagesData(images);
-      }
-      setTransition("zoomIn");
-    }, 200);
-
-    setTimeout(() => {
-      setTransition(false);
-    }, 600);
+    if (tag !== "all") {
+      const filteredImages = images.filter((value) => value.tags.includes(tag));
+      setImagesData(filteredImages);
+    } else {
+      setImagesData(images);
+    }
   };
 
-  const clickHandler = (id) => {
+  const clickHandler = useCallback((id) => {
     setActive(id);
     filterImages(id);
-  };
+  }, [filterImages]);
+  
 
   const animateHeader = (index) => {
     if (headerRefs.current[index] && headerRefs.current[index].current) {
@@ -263,6 +252,8 @@ export default function Home() {
     }
   }, [currentSlide]);
 
+  const ShowcaseMemo = React.memo(Showcase);
+
   return (
     <>
       <Swiper
@@ -282,16 +273,21 @@ export default function Home() {
         onSlideChange={onSlideChange}
       >
         {sliderData.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={slide.srNum}>
             <div
               className="slideBackground"
-              style={{ backgroundImage: `url(${slide.imgUrl})` }}
+              style={{ '--background-image': `url(${slide.imgUrl})` }}
             >
               <div
                 className="hero-heading-container"
                 ref={headerRefs.current[index]}
               >
-                <div className="srNum">{slide.srNum}/4</div>
+                <div
+                  className="srNum"
+                  style={{ color: "#72A0C1", fontWeight: "bold" }}
+                >
+                  {slide.srNum}/7
+                </div>
                 <h2 className="myText">{slide.h1}</h2>
                 <h3 className="myText">{slide.h2}</h3>
               </div>
@@ -300,37 +296,9 @@ export default function Home() {
         ))}
       </Swiper>
 
-      <div id="about-container">
-        <div className="about-text">
-          <h2>
-            {" "}
-            hey , there <PiHandFill />
-          </h2>
-          <h3>I'm Prenav kumar </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            debitis distinctio maiores cupiditate fugit aliquid eum nemo, magni
-            sed nisi dicta officiis dolorum earum cumque vitae eos minus ratione
-            amet. debitis distinctio maiores cupiditate fugit aliquid eum nemo,
-            magni sed nisi dicta officiis dolorum earum cumque vitae eos minus
-            ratione amet.
-          </p>
-          <div className="info-div">
-            <FaRegArrowAltCircleRight className="right-arrow" />
-            <p>more information.</p>
-          </div>
-        </div>
-        <div className="about-img">
-          <img
-            src="https://cinefilms.co.in/assets/img/photos/about.jpg"
-            alt=""
-          />
-        </div>
-      </div>
+      <AboutUs />
 
       <div id="portfolio-container">
-        {/* <Portfolio /> */}
-
         <div className="portfolio-heading">
           <h2>Check our Portfolio</h2>
         </div>
@@ -354,70 +322,11 @@ export default function Home() {
         </div>
 
         <div className="portfolio-collage">
-          <Showcase
-            imagesData={imagesData}
-            transition={transition}
-            currentFilter={active}
-          />
+          <ShowcaseMemo imagesData={imagesData} currentFilter={active} />
         </div>
       </div>
 
-      <div id="services-container">
-        <div className="services-heading">
-          <h2>Our Services</h2>
-          <h3>
-            Transforming fleeting moments into timeless memories, our lens
-            captures the essence of your journey, turning each snapshot into a
-            masterpiece that speaks volumes beyond words.
-          </h3>
-        </div>
-        <div className="services-button">
-          <Button />
-        </div>
-      </div>
-
-      <div id="contact-container">
-        <div className="contact-heading">
-          <h2>Contact Us</h2>
-        </div>
-        <Contact />
-      </div>
-
-      <div id="footer-container">
-        <div className="footer-heading">
-          <h2>
-            Let’s discuss <span> ! </span>{" "}
-          </h2>
-        </div>
-        <div className="footer-content">
-          <p>abc@gmail.com</p>
-          <button onClick={showModal}>Get Direction</button>
-          <Modal
-            title="Get Direction"
-            width={"900"}
-            footer={[]}
-            open={isModalOpen}
-            onOk={handleOk}
-            onCancel={handleCancel}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.1511742239945!2d76.83748791512969!3d30.657871281663244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94c78077e03d%3A0xd2999931358175b!2sThe%20Hermitage%20Plaza!5e0!3m2!1sen!2sin!4v1670397502062!5m2!1sen!2sin"
-              width="100%"
-              height="400px"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </Modal>
-          <p>1234567890</p>
-        </div>
-        <div className="footer-end">
-          <FaFacebook className="facebook icon" />
-          <FaInstagram className="instagram icon" />
-          <FaTwitter className="icon" />
-          <FaWhatsapp className="icon" />
-        </div>
-      </div>
+      <Services />
     </>
   );
 }

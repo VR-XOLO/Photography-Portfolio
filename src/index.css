@@ -10,6 +10,9 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.aaquib{
+  color: black;
+}
 
 /* header container start  */
 
@@ -29,7 +32,7 @@ body {
 }
 
 .header-container #link-container li {
-  font-size: 17px;
+  font-size: 16px;
   list-style: none;
   box-shadow: inset 0 0 0 0 white;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -58,24 +61,29 @@ body {
   font-family: "Poppins", sans-serif;
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 12px;
 }
 .header-container #link-container li a:hover{
   color: black;
 }
 
 
-.social-icons .youtube,
-.social-icons .facebook,
-.social-icons .instagram {
-  background-color: white;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 50%;
+
+.social-icons span  {
+     padding: 10px 15px;
+     border-radius: 50px;
+     cursor: pointer;
+     color: white;
+     background-color: #72A0C1;
+     box-shadow: inset 0 0 0 0 white;
+     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
 }
-.social-icons .instagram {
-  margin: 0px 10px;
+.social-icons span:hover{
+  box-shadow: inset 200px 0 0 white;
+  color: black !important;
 }
+
 
 /* header container  end  */
 
@@ -88,11 +96,12 @@ body {
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  color: white;
+  color: #72A0C1;
 }
 
+
 .slideBackground {
-  background-size: cover;
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background-image);  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
@@ -123,7 +132,7 @@ body {
   display: flex;
   color: white;
   justify-content: space-around;
-  padding: 150px 180px;
+  padding: 100px 180px;
 }
 
 #about-container .about-text {
@@ -135,13 +144,14 @@ body {
 }
 #about-container .about-img img {
   width: 100%;
-  height: 100%;
+  height: 500px;
   display: block;
 }
 
 #about-container .about-text h2 {
   font-size: 30px;
   margin-bottom: 15px;
+  color: #72A0C1;
 }
 #about-container .about-text h3 {
   font-size: 50px;
@@ -156,6 +166,15 @@ body {
 .info-div {
   display: flex;
   align-items: center;
+}
+.info-div a {
+  color: white;
+  transition: all .3s ease-in-out;
+  text-decoration: none;
+
+}
+.info-div a:hover{
+  color: #72A0C1;
 }
 .info-div p {
   margin-left: 10px;
@@ -185,7 +204,7 @@ img:hover {
   flex-direction: column;
   color: white;
   align-items: center;
-  padding: 100px 180px;
+  padding: 100px 150px;
 }
 #portfolio-container .portfolio-heading{
   font-size: 30px;
@@ -230,6 +249,9 @@ img:hover {
   width: 100%;
 }
 
+.hide-on-mobile {
+  display: none;
+}
 
 /* portfolio styling end */
 
@@ -317,9 +339,19 @@ img:hover {
 .footer-content button{
   font-size: 19px;
   cursor: pointer;
+  color: white;
+  /* font-weight: bold; */
   white-space: nowrap;
   padding: 25px 80px;
  border-radius: 50px;
+ background-color: #72A0C1;
+     box-shadow: inset 0 0 0 0 white;
+     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+}
+.footer-content button:hover{
+  box-shadow: inset 400px 0 0 white;
+  color: black !important;
 }
 
 .footer-end{
@@ -379,7 +411,7 @@ input::-webkit-inner-spin-button {
   }
 
   .header-container #link-container li {
-    font-size: 17px;
+    font-size: 16px;
     padding: 15px 0px;
     list-style: none;
   }
@@ -406,10 +438,10 @@ input::-webkit-inner-spin-button {
   }
 
   .hero-heading-container h2 {
-    font-size: 50px;
+    font-size: 40px;
   }
   .hero-heading-container h3 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   #about-container {
@@ -449,6 +481,9 @@ input::-webkit-inner-spin-button {
     list-style-type: none;
     margin: 30px 0;
     overflow: auto;
+  }
+  .hide-on-mobile {
+    display: block; /* or inline, inline-block, etc., depending on your layout */
   }
 
   #services-container{
@@ -505,7 +540,8 @@ input::-webkit-inner-spin-button {
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* 
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
   .header-container {
     padding: 0 20px;
   }
@@ -519,4 +555,4 @@ input::-webkit-inner-spin-button {
     font-size: 15px;
     padding: 20px 10px;
   }
-}
+} */ 
