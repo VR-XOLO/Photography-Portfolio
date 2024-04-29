@@ -12,6 +12,13 @@
    
 }
 
+.collage-container p {
+    color: white;
+    text-align: center;
+     margin-bottom: 15px;
+     font-size: 20px;
+}
+
 .page-collage{
     column-count: 3;
     column-gap: 15px;
@@ -23,6 +30,9 @@
     }
     .collage-container h2{
         font-size: 25px;
+    }
+    .collage-container p {
+         font-size: 16px;
     }
     .slideBackground{
         height: 65vh !important;

@@ -17,7 +17,7 @@ import lgAutoplay from "lightgallery/plugins/autoplay";
 import lgFullscreen from "lightgallery/plugins/fullscreen";
 import { useEffect, useState } from "react";
 
-export default function Showcase({ imagesData, currentFilter, transition }) {
+export default function Showcase({ imagesData, currentFilter }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const onInit = () => {};
 
@@ -46,7 +46,7 @@ export default function Showcase({ imagesData, currentFilter, transition }) {
           plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen]}
         >
           {imagesData?.map((image, index) => {
-            const isLastImage = index === imagesData.length - 1; // Check if the current image is the last one
+            const isLastImage = index === imagesData.length ; // Check if the current image is the last one
             const itemClassName = `gallery-item ${
               isLastImage && isMobile ? "hide-on-mobile" : ""
             }`.trim();

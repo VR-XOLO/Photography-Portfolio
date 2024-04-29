@@ -1,8 +1,7 @@
 import React from 'react'
-import Showcase from '../../component/portfolio/showcase/Showcase';
 import "./MainCollage.css"
 import Collage from '../../component/Collages/Collage';
-const MainCollage = ({sliderData, imagesData,heading}) => {
+const MainCollage = ({sliderData, imagesData,heading, subHeading}) => {
 
  
 
@@ -28,6 +27,7 @@ const MainCollage = ({sliderData, imagesData,heading}) => {
 
        <div className="collage-container">
         <h2>{heading} </h2>
+        <p>{subHeading}</p>
 
         <div className="PerPage-collage">
           <Collage  imagesData={imagesData}/>

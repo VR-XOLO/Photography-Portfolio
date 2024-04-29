@@ -1,7 +1,7 @@
 import { Modal ,} from 'antd'
 import React, { useState } from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
-
+import {Link} from "react-router-dom"
 
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className="footer-content">
-          <p>abc@gmail.com</p>
+          <p>aaravcreation.in@gmail.com</p>
           <button onClick={showModal}>Get Direction</button>
           <Modal
             title="Get Direction"
@@ -45,13 +45,18 @@ const Footer = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Modal>
-          <p>1234567890</p>
+          <p> 91+ 7888799584</p>
         </div>
         <div className="footer-end">
-          <FaFacebook className="facebook icon" />
+          <a href="https://www.instagram.com/aaravfilms5621/" target="_blank" rel="noopener noreferrer"> 
           <FaInstagram className="instagram icon" />
-          <FaTwitter className="icon" />
-          <FaWhatsapp className="icon" />
+          </a>
+          <a href="https://www.instagram.com/aaravfilms5621/" target="_blank" rel="noopener noreferrer">
+          <FaFacebook className="facebook icon"  />
+          </a>
+          <a href="https://www.instagram.com/aaravfilms5621/" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className=" twitter icon" />
+          </a>
         </div>
       </div>
     </>

@@ -112,6 +112,11 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(-
   color: white;
 }
 
+.srNum{
+  color: #72A0C1;
+  font-weight: bold;
+}
+
 .hero-heading-container h2 {
   font-size: 70px;
 }
@@ -229,7 +234,7 @@ img:hover {
   line-height: 22px;
   padding: 10px 20px;
   margin: 0 2.5px;
-  box-shadow: inset 0 0 0 0 white;
+  box-shadow: inset 0 0 0 0 white; 
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
   white-space: nowrap;
@@ -325,7 +330,7 @@ img:hover {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 70px;
 }
 
 .footer-heading h2{
@@ -334,7 +339,7 @@ img:hover {
   margin-left: 30px;
 }
 .footer-content p{
-  font-size: 30px;
+  font-size: 20px;
 }
 .footer-content button{
   font-size: 19px;
@@ -364,13 +369,18 @@ img:hover {
   margin-left: 30px;
 }
 
-.footer-end .icon{
+.footer-end a .icon{
   background-color: transparent;
   border: 1px solid white;
   padding: 10px;
   font-size: 19px;
   border-radius: 50%;
   color: white;
+  transition: all .3s ease-in-out;
+}
+.footer-end a .icon:hover{
+  background-color: white;
+  color: black;
 }
 
 .ant-modal{
@@ -463,6 +473,11 @@ input::-webkit-inner-spin-button {
     margin-left: 0px;
     margin-bottom: 15px;
   }
+  #about-container .about-img img {
+    width: 100%;
+    height: 350px;
+    display: block;
+  }
 
   #portfolio-container {
     padding: 50px 20px;
@@ -534,7 +549,6 @@ input::-webkit-inner-spin-button {
   }
 
   .footer-end{
-   
     margin-left: 0px;
   }
 

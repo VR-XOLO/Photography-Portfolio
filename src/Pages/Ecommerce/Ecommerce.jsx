@@ -12,42 +12,42 @@ const Ecommerce = () => {
       id: 1,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP1,
       alt: "Wedding",
     },
     {
       id: 2,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL1,
       alt: "Wedding",
     },
     {
       id: 3,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.EcomL2,
       alt: "Wedding",
     },
     {
       id: 4,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP2,
       alt: "5",
     },
     {
       id: 5,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL3,
       alt: "Events",
     },
     {
       id: 6,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL4,
       alt: "Events",
     },
 
@@ -55,21 +55,21 @@ const Ecommerce = () => {
       id: 7,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP3,
       alt: "Pre-Wedding",
     },
     {
       id: 8,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP4,
       alt: "Pre-Wedding",
     },
     {
       id: 9,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.EcomL5,
       alt: "Pre-Wedding",
     },
 
@@ -77,21 +77,21 @@ const Ecommerce = () => {
       id: 10,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL6,
       alt: "Fashion & Portraits",
     },
     {
       id: 11,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP5,
       alt: "Fashion & Portraits",
     },
     {
       id: 12,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL7,
       alt: "Fashion & Portraits",
     },
 
@@ -99,21 +99,21 @@ const Ecommerce = () => {
       id: 13,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.EcomL8,
       alt: "Baby & Maternity",
     },
     {
       id: 14,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.EcomP6,
       alt: "Baby & Maternity",
     },
     {
       id: 15,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.EcomL9,
       alt: "Baby & Maternity",
     },
   ];
@@ -126,10 +126,11 @@ const Ecommerce = () => {
       imgUrl: Images.Slider7
     } 
   ];
+  const subHeading = "Aarav films extends its expertise to e-commerce  services in digital market place from visually stunning product photography ."
 
   return (
     <>
-        <MainCollage sliderData={sliderData} imagesData={images} heading="E-Commerce" />
+        <MainCollage sliderData={sliderData} imagesData={images} heading="E-Commerce" subHeading={subHeading} />
 
     </>
   )

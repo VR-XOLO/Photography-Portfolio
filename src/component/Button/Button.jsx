@@ -15,8 +15,8 @@ const Button = () => {
     },
     {
         id : 3,
-        name: "Pre-Wedding",
-        path : "/preWedding"
+        name: "architecture Photography",
+        path : "/architecturePhotography"
     },
     {
         id : 4,

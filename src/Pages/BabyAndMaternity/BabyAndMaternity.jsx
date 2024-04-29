@@ -12,42 +12,42 @@ const BabyAndMaternity = () => {
       id: 1,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP1,
       alt: "Wedding",
     },
     {
       id: 2,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.BML1,
       alt: "Wedding",
     },
     {
       id: 3,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.BML2,
       alt: "Wedding",
     },
     {
       id: 4,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP2,
       alt: "5",
     },
     {
       id: 5,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.BML3,
       alt: "Events",
     },
     {
       id: 6,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.BML4,
       alt: "Events",
     },
 
@@ -55,21 +55,21 @@ const BabyAndMaternity = () => {
       id: 7,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP3,
       alt: "Pre-Wedding",
     },
     {
       id: 8,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP4,
       alt: "Pre-Wedding",
     },
     {
       id: 9,
       name: "Pre-Wedding",
       tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src:Images.BML5,
       alt: "Pre-Wedding",
     },
 
@@ -77,21 +77,21 @@ const BabyAndMaternity = () => {
       id: 10,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.BML6,
       alt: "Fashion & Portraits",
     },
     {
       id: 11,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP5,
       alt: "Fashion & Portraits",
     },
     {
       id: 12,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.BML7,
       alt: "Fashion & Portraits",
     },
 
@@ -99,21 +99,21 @@ const BabyAndMaternity = () => {
       id: 13,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src:Images.BML8,
       alt: "Baby & Maternity",
     },
     {
       id: 14,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.BMP6,
       alt: "Baby & Maternity",
     },
     {
       id: 15,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src: Images.BML9,
       alt: "Baby & Maternity",
     },
   ];
@@ -126,11 +126,12 @@ const BabyAndMaternity = () => {
       imgUrl:  Images.Slider6
     } 
   ];
+  const subHeading = "From glowing maternity portraits to tender newborn shots we ensures and prioritize  the comfort and safety of both mother and child."
 
   return (
 
     <>
-        <MainCollage sliderData={sliderData} imagesData={images} heading="Baby & Maternity" />
+        <MainCollage sliderData={sliderData} imagesData={images} heading="Baby & Maternity"  subHeading={subHeading}/>
 
     </>
   )

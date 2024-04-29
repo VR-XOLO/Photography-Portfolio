@@ -31,108 +31,108 @@ export default function Home() {
       id: 1,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src: Images.WP1,
       alt: "Wedding",
     },
     {
       id: 2,
       name: "Wedding",
       tags: ["Wedding"],
-      src: Images.Slider2,
+      src: Images.WL1,
       alt: "Wedding",
     },
     {
       id: 3,
       name: "Wedding",
       tags: ["Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src: Images.WL2,
       alt: "Wedding",
     },
     {
       id: 4,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
-      alt: "5",
+      src: Images.ECP1,
+      alt: "Events",
     },
     {
       id: 5,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src:  Images.ECL1,
       alt: "Events",
     },
     {
       id: 6,
       name: "Events",
       tags: ["Events"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src:  Images.ECL2,
       alt: "Events",
     },
 
     {
       id: 7,
-      name: "Pre-Wedding",
-      tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
-      alt: "Pre-Wedding",
+      name: "Architecture",
+      tags: ["Architecture"],
+      src:  Images.AIP1,
+      alt: "Architecture",
     },
     {
       id: 8,
-      name: "Pre-Wedding",
-      tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
-      alt: "Pre-Wedding",
+      name: "Architecture",
+      tags: ["Architecture"],
+      src:  Images.AIP2,
+      alt: "Architecture",
     },
     {
       id: 9,
-      name: "Pre-Wedding",
-      tags: ["Pre-Wedding"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
-      alt: "Pre-Wedding",
+      name: "Architecture",
+      tags: ["Architecture"],
+      src:  Images.AIL4,
+      alt: "Architecture",
     },
 
     {
       id: 10,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src:  Images.Slider3,
       alt: "Fashion & Portraits",
     },
     {
       id: 11,
       name: "Fashion & Portraits",
       tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
+      src:  Images.FP1,
       alt: "Fashion & Portraits",
     },
     {
       id: 12,
-      name: "Fashion & Portraits",
-      tags: ["Fashion & Portraits"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
-      alt: "Fashion & Portraits",
+      name: "E-Commerce",
+      tags: ["E-Commerce"],
+      src:  Images.EcomL1,
+      alt: "E-Commerce",
     },
 
     {
       id: 13,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP8.jpg",
+      src:  Images.BML1,
       alt: "Baby & Maternity",
     },
     {
       id: 14,
-      name: "Baby & Maternity",
-      tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Ring%20ceromony/DAV09783%20(1).jpg",
-      alt: "Baby & Maternity",
+      name: "E-Commerce",
+      tags: ["E-Commerce"],
+      src:  Images.EcomP1,
+      alt: "E-Commerce",
     },
     {
       id: 15,
       name: "Baby & Maternity",
       tags: ["Baby & Maternity"],
-      src: "https://cinefilms.co.in/assets/img/Pre-Wedding/NVP13.jpeg",
+      src:  Images.BML6,
       alt: "Baby & Maternity",
     },
   ];
@@ -166,10 +166,10 @@ export default function Home() {
       imgUrl: Images.Slider4,
     },
     {
-      h1: "Pre - Wedding",
+      h1: "Architecture",
       h2: "Photography",
       srNum: "05",
-      imgUrl: Images.Slider5,
+      imgUrl: Images.AIL1,
     },
     {
       h1: "Baby & Maternity",
@@ -184,7 +184,7 @@ export default function Home() {
       imgUrl: Images.Slider7,
     },
   ];
-
+  
   const filtersData = [
     {
       name: "All",
@@ -199,8 +199,8 @@ export default function Home() {
       id: "Events",
     },
     {
-      name: "Pre-Wedding",
-      id: "Pre-Wedding",
+      name: "Architecture",
+      id: "Architecture",
     },
     {
       name: "Fashion & Portraits",
@@ -254,6 +254,8 @@ export default function Home() {
 
   const ShowcaseMemo = React.memo(Showcase);
 
+  const para = "AARAV FILMS merges innovation with storytelling, creating captivating content that pushes the boundaries of media. Known for integrating cutting-edge technology with artistic vision, its team of passionate creators produces visually stunning, emotionally resonant work across platforms. As a trailblazer in creative media, AARAV FILMS continuously sets new benchmarks for excellence, inspiring and entertaining audiences worldwide with its mesmerizing visual effects and thought-provoking narratives."
+
   return (
     <>
       <Swiper
@@ -284,7 +286,6 @@ export default function Home() {
               >
                 <div
                   className="srNum"
-                  style={{ color: "#72A0C1", fontWeight: "bold" }}
                 >
                   {slide.srNum}/7
                 </div>
@@ -296,7 +297,7 @@ export default function Home() {
         ))}
       </Swiper>
 
-      <AboutUs />
+      <AboutUs para={para} />
 
       <div id="portfolio-container">
         <div className="portfolio-heading">
@@ -309,9 +310,7 @@ export default function Home() {
               return (
                 <li
                   key={item.id}
-                  className={`filter-menu-item  ${
-                    active === item.id ? "active" : ""
-                  }`}
+                  className={`filter-menu-item ${active === item.id ? 'active' : ''}`}
                   onClick={() => clickHandler(item.id)}
                 >
                   {item.name}

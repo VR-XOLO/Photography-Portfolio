@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutCard.css";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Images } from "../../constant/ImageConst";
 const AboutCard = () => {
     
@@ -21,6 +20,13 @@ const AboutCard = () => {
         },
         {
             name: "Vishal Tiwari",
+            title: "Graphic Designer",
+            img: Images.Profile3,
+            facebookLink: "https://www.facebook.com/AbhishekPhotographerProfile", 
+            instagramLink: "https://www.instagram.com/AbhishekPhotographerProfile" 
+        },
+        {
+            name: "Krishna",
             title: "Editor",
             img: Images.Profile3,
             facebookLink: "https://www.facebook.com/AbhishekPhotographerProfile", 
@@ -48,6 +54,13 @@ const AboutCard = () => {
             img: Images.Profile6,
             facebookLink: "https://www.facebook.com/AbhishekPhotographerProfile", 
             instagramLink: "https://www.instagram.com/AbhishekPhotographerProfile" 
+        },
+        {
+            name: "Ajeet",
+            title: "Cinematic Photographer",
+            img: Images.Profile6,
+            facebookLink: "https://www.facebook.com/AbhishekPhotographerProfile", 
+            instagramLink: "https://www.instagram.com/AbhishekPhotographerProfile" 
         }
     ];
 
@@ -70,18 +83,7 @@ const AboutCard = () => {
                                 <h3 className="name">{data.name}</h3>
                                 <h4 className="title">{data.title}</h4>
                             </div>
-                            <ul className="social">
-                                <li>
-                                    <a href={data.facebookLink} target="_blank" rel="noopener noreferrer">
-                                        <FaFacebook className="facebook" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={data.instagramLink} target="_blank" rel="noopener noreferrer">
-                                        <FaInstagram className="instagram" />
-                                    </a>
-                                </li>
-                            </ul>
+                           
                         </div>
                     
                 );
@@ -101,18 +103,7 @@ const AboutCard = () => {
                         <h3 className="name">{data.name}</h3>
                         <h4 className="title">{data.title}</h4>
                     </div>
-                    <ul className="social">
-                                <li>
-                                    <a href={data.facebookLink} target="_blank" rel="noopener noreferrer">
-                                        <FaFacebook className="facebook" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={data.instagramLink} target="_blank" rel="noopener noreferrer">
-                                        <FaInstagram className="instagram" />
-                                    </a>
-                                </li>
-                            </ul>
+                 
                 </div>
                     
                 );

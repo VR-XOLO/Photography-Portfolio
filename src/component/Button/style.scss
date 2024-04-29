@@ -30,7 +30,7 @@
     text-align: center;
     text-transform: uppercase;
     color: white;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
     background-color: transparent !important;
     outline: none;
@@ -39,6 +39,8 @@
     cursor: pointer;
     border-radius: 30px;
     margin-right: 20px;
+    font-family: "Poppins", sans-serif;
+
     
     &:before {
       content: "";

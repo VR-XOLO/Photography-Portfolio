@@ -1,27 +1,14 @@
-import React, { useState } from 'react'
-import { FaFacebook, FaInstagram,  FaTwitter, FaWhatsapp } from 'react-icons/fa'
-
-import { Modal } from 'antd'
+import React from 'react'
 import AboutUs from '../../component/AboutUs'
 import Services from '../../component/Services'
-import ContactUs from '../../component/ContactUs'
 import AboutCard from '../../component/AboutCard/AboutCard'
 
-const About = ({ContactScroll}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const About = () => {
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+ const para  = "AARAV FILMS seamlessly integrates cutting-edge technology with artistic vision, producing visually stunning and emotionallyresonant content across various platforms. AARAV FILMS boasts a richlegacy of collaborating with brands to bring their stories to lifein dynamic and impactful ways. With a keen understanding of brandidentity and consumer psychology, AARAV FILMS crafts bespokecampaigns that resonate deeply with target audiences, drivingengagement and brand loyalty."
   return (
     <>
-    <AboutUs/>
+    <AboutUs para={para}/>
 
         <AboutCard/>  
      

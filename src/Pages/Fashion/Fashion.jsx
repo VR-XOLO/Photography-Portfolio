@@ -128,9 +128,11 @@ const Fashion = () => {
     } 
   ];
 
+  const subHeading = " Aarav films specialized in capturing the essence of fashion portraying the beauty of individual through stunning portraits."
+
   return (
     <>
-        <MainCollage sliderData={sliderData} imagesData={images} heading="Fashion & Portraits" />
+        <MainCollage sliderData={sliderData} imagesData={images} heading="Fashion & Portraits" subHeading={subHeading} />
 
     </>
   )

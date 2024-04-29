@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Wedding from "./Pages/Wedding/Wedding"
-import PreWedding from './Pages/PreWedding/PreWedding'
+import PreWedding from './Pages/Architecture/Architecture'
 import Fashion from './Pages/Fashion/Fashion'
 import BabyAndMaternity from './Pages/BabyAndMaternity/BabyAndMaternity'
 import Event from './Pages/Event/Event'
@@ -17,7 +17,6 @@ function App() {
   const ContactScroll = useRef("")
   
   const handleScroll = ()=>{
-    console.log("frees");
      ContactScroll?.current.scrollIntoView({
       behavior : "smooth"
      })
@@ -31,7 +30,7 @@ function App() {
       <Route path='/about' element={<About ContactScroll={ContactScroll} />} />
       <Route path='/wedding'   element={<Wedding ContactScroll={ContactScroll} />} />
       <Route path='/event'   element={<Event  ContactScroll={ContactScroll} />} />
-      <Route path='/preWedding'   element={<PreWedding   ContactScroll={ContactScroll} />} />
+      <Route path='/architecturePhotography'   element={<PreWedding   ContactScroll={ContactScroll} />} />
       <Route path='/fashionAndPortraits'   element={<Fashion   ContactScroll={ContactScroll}/>} />
       <Route path='/babyAndMaternity'   element={<BabyAndMaternity   ContactScroll={ContactScroll}/>} />
       <Route path='/Ecommerce'   element={<Ecommerce ContactScroll={ContactScroll} />} />
